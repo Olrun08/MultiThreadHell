@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiThreadHell", "MultiThreadHell\MultiThreadHell.csproj", "{114DAA95-11E0-45AC-963B-A66E5E9096C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiThreading", "UiThreading\UiThreading.csproj", "{241A1BCC-BA4B-40B7-9658-09B40A04E2A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{114DAA95-11E0-45AC-963B-A66E5E9096C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{114DAA95-11E0-45AC-963B-A66E5E9096C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{114DAA95-11E0-45AC-963B-A66E5E9096C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241A1BCC-BA4B-40B7-9658-09B40A04E2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241A1BCC-BA4B-40B7-9658-09B40A04E2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241A1BCC-BA4B-40B7-9658-09B40A04E2A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241A1BCC-BA4B-40B7-9658-09B40A04E2A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
