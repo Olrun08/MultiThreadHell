@@ -32,6 +32,37 @@ namespace MultiThreadHell
             downloadTask.Wait();
             Console.WriteLine("-------------------------------------------------------");
 
+            var task = Task.Run(async () =>
+            {
+                Log("Before async await thread");
+                // Download the string : asynchronously
+                await WebDownloadStringAsync(url);
+
+                Log("After async await thread");
+                // Wait for task to complete
+                Console.WriteLine("-------------------------------------------------------");
+            });
+            // Wait the main task
+            task.Wait();
+
+            #endregion
+
+            #region Async Return Types
+
+            // Get the task
+            var doWorkResultTask = DoWorkAndGetResultAsync("Return this");
+
+            // Wait for it
+            doWorkResultTask.Wait();
+            var doWorkResult = doWorkResultTask.Result;
+            Console.WriteLine("-------------------------------------------------------");
+
+            Task.Run(async () =>
+            {
+                var doWorkResult2 = await DoWorkAndGetResultAsync("Return this 2");
+            }).Wait();
+            Console.WriteLine("-------------------------------------------------------");
+
             #endregion
 
             Console.ReadLine();
@@ -78,6 +109,22 @@ namespace MultiThreadHell
 
             // Log
             Log($"Downloaded {url}. {result.Substring(0, 10)}");
+        }
+
+        private static async Task<string> DoWorkAndGetResultAsync(string str)
+        {
+            Log($"Doing work for {str}");
+
+            await Task.Run(async () =>
+            {
+                Log($"Doing work on inner thread for {str}");
+
+                await Task.Delay(500);
+
+                Log($"Done work on inner thread for {str}");
+            });
+            Log($"Done work for {str}");
+            return str;
         }
 
         #endregion
