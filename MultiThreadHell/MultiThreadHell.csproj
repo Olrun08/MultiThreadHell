@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
-        <StartupObject>MultiThreadHell.FirstTask</StartupObject>
+        <StartupObject>MultiThreadHell.TaskMaster</StartupObject>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{114DAA95-11E0-45AC-963B-A66E5E9096C4}</ProjectGuid>
@@ -45,6 +45,8 @@
         <Compile Include="Part1\ThreadNew.cs" />
         <Compile Include="Part1\WaitThread.cs" />
         <Compile Include="Part2\FirstTask.cs" />
+        <Compile Include="Part3\TaskMaster.cs" />
+        <Compile Include="Part3\ThreadIssues.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
